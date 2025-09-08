@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" width="device-width" initial-scale="1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>COCI Youth Week Feedback</title>
+</head>
+
+<body>
+<!-- Form section -->
+        <div id="contact">
+            <h1>Feedback</h1>
+            <form name="youthContact" netlify action="/">
+                <!-- Non negotiable line -->
+                <input type="hidden" name="form-name" value="youthContact" />
+
+                <!-- form actual beginning -->
+                <label for="quest">On a scale of 1 to 5 (1 = Poor, 5 = Excellent), How would you rate our recent Youth Week Celebration out of 10?</label>
+                <select id="quest" name="quest">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+
+                <label for="favorite">What was your favorite event of the week?</label>
+                <select id="fav" name="fav">
+                  <option value="Conference">Conference</option>
+                  <option value="Financial Talk">Financial Talk</option>
+                  <option value="Health Talk">Health(Mental) Talk</option>
+                  <option value="Outreach">Outreach</option>
+                  <option value="Games and Networking">Games and Networking</option>
+                  <option value="Climax and Dinner">Climax and Dinner</option>
+                </select>
+
+                <label for="expect">Did the Youth Week meet your expectations?</label>
+                <select id="expectations" name="expectations">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  <option value="Exceeded them">Exceeded them</option>
+                </select>
+
+                <label for="why">As a result of Youth Week, what is one specific spiritual habit you feel motivated to start or improve?</label>
+                <textarea name="why" id="why"></textarea>
+
+                <label for="message">For future events, what new activity would you suggest we add?</label>
+                <textarea name="message" id="message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+           </div> 
+
+            <div id="form-confirmation" class="hidden">
+    <p>Thank you for taking time to fill the form, congratulations on a successful Youth Week Celebration and God bless you!</p>
+</div>
+<script src="main.js"></script>
+</body>

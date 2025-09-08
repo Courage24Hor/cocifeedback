@@ -14,6 +14,26 @@ input, select, textarea, button {
     font-family: inherit; /* Ensure font consistency */
 }
 
+/* FIX FOR DROPDOWNS AND TEXTAREAS */
+select, textarea {
+    width: 100% !important;        /* Force full width */
+    max-width: 100% !important;    /* Prevent overflow */
+    box-sizing: border-box;        /* Include padding in width */
+    padding: 12px;
+    font-size: 16px;               /* Crucial for iOS - prevents zoom */
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    font-family: inherit;          /* Match your body font */
+}
+
+/* Specifically for the textarea */
+textarea {
+    min-height: 120px;             /* Give it a good starting height */
+    resize: vertical;              /* Allow user to resize only vertically */
+}
+
 label {
     display: block;
     margin-bottom: 0.5rem;
@@ -175,3 +195,4 @@ p {
         font-size: 1.1rem;
     }
 }
+

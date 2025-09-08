@@ -84,3 +84,16 @@ p {
 
 }
 
+@media (max-width: 768px) {
+    body {
+        padding: 15px; /* Reduce padding on mobile */
+    }
+
+    h1, h2 {
+        margin-bottom: 0.5rem; /* Less space below headings */
+    }
+
+    p {
+        margin-bottom: 1rem; /* Ensure consistent paragraph spacing */
+        line-height: 1.5; /* Slightly tighter line height can help on small screens */
+    }

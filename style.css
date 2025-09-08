@@ -8,13 +8,31 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-input, textarea, select {
-  width: 100%; /* Makes it fill its container */
-  font-size: 1rem; /* Scales with the user's default font size */
-  padding: 0.5rem; /* Provides ample, scalable touch targets */
-  box-sizing: border-box; /* Crucial when using width: 100% and padding */
+input, select, textarea, button {
+    box-sizing: border-box;
 }
 
+select, textarea, button { box-sizing: border-box; }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        select, textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
 h1 {
     font-weight: 600;
 }
@@ -65,3 +83,4 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
 }
+

@@ -8,55 +8,86 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* --- FORM STYLING FIXES --- */
 input, select, textarea, button {
     box-sizing: border-box;
+    font-family: inherit; /* Ensure font consistency */
 }
 
-select, textarea, button { box-sizing: border-box; }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        select, textarea {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-h1 {
-    font-weight: 600;
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    margin-top: 1rem; /* Add space above labels */
 }
 
-h1:hover{
-    color: teal;
+/* Style all text inputs, selects, and textareas */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px; /* Crucial for mobile - prevents zoom */
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
 }
 
-form {
-    display: grid;
+/* Specific style for textareas */
+textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
-p {
-    line-height: 1.6;
+/* Style radio buttons and their labels differently */
+input[type="radio"] {
+    margin-right: 0.5rem;
 }
 
+.radio-label {
+    display: inline-block; /* Radio labels should be inline */
+    font-weight: normal;
+    margin: 0.5rem 1rem 0.5rem 0.2rem;
+    cursor: pointer;
+}
+
+/* Fix the submit button for mobile */
 .submit-button {
-    margin: 0;
-    width: 25%;
+    width: 100%; /* Changed from 25% to full width on mobile */
+    padding: 15px;
     background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
 }
 
 .submit-button:hover {
     background-color: aquamarine;
+    color: #333;
+}
+
+/* --- EXISTING STYLES (KEEP THESE) --- */
+h1 {
+    font-weight: 600;
+}
+
+h1:hover {
+    color: teal;
+}
+
+form {
+    display: block; /* Changed from grid to block for better form control */
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 #form-confirmation {
@@ -81,19 +112,66 @@ p {
     display: inline-block;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
 }
 
+/* --- MOBILE RESPONSIVE FIXES --- */
 @media (max-width: 768px) {
     body {
-        padding: 15px; /* Reduce padding on mobile */
+        padding: 15px;
     }
 
     h1, h2 {
-        margin-bottom: 0.5rem; /* Less space below headings */
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem; /* Slightly smaller headings on mobile */
     }
 
     p {
-        margin-bottom: 1rem; /* Ensure consistent paragraph spacing */
-        line-height: 1.5; /* Slightly tighter line height can help on small screens */
+        margin-bottom: 1rem;
+        line-height: 1.5;
+        font-size: 0.95rem; /* Slightly smaller text for mobile */
     }
+
+    /* Ensure form elements are touch-friendly */
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+        padding: 14px; /* Slightly larger padding for touch */
+        margin-bottom: 0.8rem;
+    }
+
+    /* Make radio buttons easier to tap */
+    .radio-label {
+        padding: 8px 0; /* Add tap area around radio labels */
+        display: inline-block;
+        min-height: 44px; /* Minimum tap target size */
+        line-height: 1.4;
+    }
+
+    input[type="radio"] {
+        transform: scale(1.2); /* Slightly larger radio buttons */
+        margin-right: 0.8rem;
+    }
+
+    .submit-button {
+        padding: 18px; /* Larger button for mobile */
+        font-size: 1.2rem; /* Larger text on button */
+    }
+}
+
+/* Additional small screen optimization */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    .submit-button {
+        padding: 16px;
+        font-size: 1.1rem;
+    }
+}

@@ -8,6 +8,13 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+input, textarea, select {
+  width: 100%; /* Makes it fill its container */
+  font-size: 1rem; /* Scales with the user's default font size */
+  padding: 0.5rem; /* Provides ample, scalable touch targets */
+  box-sizing: border-box; /* Crucial when using width: 100% and padding */
+}
+
 h1 {
     font-weight: 600;
 }
@@ -56,4 +63,5 @@ p {
     display: inline-block;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
 }
